@@ -1,6 +1,5 @@
-click==7.1.2
-Flask==1.0.2
-itsdangerous==1.1.0
-Jinja2==2.11.2
-MarkupSafe==1.1.1
-Werkzeug==1.0.1
+Flask==1.1.2
+Pillow==7.1.2
+torchvision==0.6.0
+torch==https://download.pytorch.org/whl/cpu/torch_stable.html
+gunicorn==20.0.4
