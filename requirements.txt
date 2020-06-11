@@ -1,5 +1,5 @@
 Flask==1.1.2
 Pillow==7.1.2
 torchvision==0.6.0
-torch==https://download.pytorch.org/whl/cpu/torch_stable.html
+torch==https://download.pytorch.org/whl/torch_stable.html
 gunicorn==20.0.4
