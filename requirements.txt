@@ -1,5 +1,6 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 Flask==1.1.2
 Pillow==7.1.2
-torchvision==0.6.0
+torchvision==0.6.0+cpu
 gunicorn==20.0.4
-torch==https://download.pytorch.org/whl/cpu/torch-1.5.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
+torch==1.5.0+cpu
