@@ -34,7 +34,8 @@ def get_prediction(image_bytes):
     tensor = transform_image(image_bytes=image_bytes)
     outputs = model.forward(tensor)
     _, y_hat = outputs.max(1)
-    return predicted_idx = str(y_hat.item())
+    predicted_idx = str(y_hat.item())
+    return predicted_idx
    # return imagenet_class_index[predicted_idx]
 
 
@@ -44,7 +45,7 @@ def predict():
         file = request.files['file']
         img_bytes = file.read()
         #class_id, class_name = get_prediction(image_bytes=img_bytes)
-		class_name = get_prediction(image_bytes=img_bytes)
+        class_name = get_prediction(image_bytes=img_bytes)
         return jsonify({'class_id': 0, 'class_name': class_name})
 
     
