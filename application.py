@@ -32,12 +32,7 @@ def hello():
 
 
 def transform_image(infile):
-	my_transforms = transforms.Compose([transforms.Resize(256),
-										transforms.CenterCrop(224),
-										transforms.ToTensor(),
-										transforms.Normalize(
-											[0.485, 0.456, 0.406],
-											[0.229, 0.224, 0.225])])
+	my_transforms = transforms.Compose([transforms.Resize(256),transforms.CenterCrop(224),transforms.ToTensor(),transforms.Normalize([0.485, 0.456, 0.406],[0.229, 0.224, 0.225])])
 	image = Image.open(infile).convert('RGB')
 	timg = my_transforms(image)
 	timg.unsqueeze_(0)
