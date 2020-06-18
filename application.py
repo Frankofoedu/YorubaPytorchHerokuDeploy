@@ -43,7 +43,10 @@ def get_prediction(input_tensor):
 	outputs = model.forward(input_tensor)
 	_, y_hat = outputs.max(1)
 	predicted_idx = str(y_hat.item())
-	return predicted_idx
+	toop = torch.nn.functional.softmax(outputs,dim=1)
+	v, t =(toop.topk(1)) #gets the probability of the output class	
+	v = float("%.2f" % v.data.numpy().item()) * 100 #convert to percentage
+	return predicted_idx, v
 	# return imagenet_class_index[predicted_idx]
 
 
@@ -68,7 +71,7 @@ def predict():
 			imgfile = get_spectrogram(filename)
 			input_tensor = transform_image(imgfile)
 			prediction_idx = get_prediction(input_tensor)			  
-			return jsonify({'class_id': prediction_idx})
+			return jsonify({'class_id': prediction_idx, 'probability' : probability})
 		else:
 			abort(400)
 
