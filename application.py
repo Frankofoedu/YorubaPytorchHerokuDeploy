@@ -70,7 +70,7 @@ def predict():
 			audio_file.save('tmp/'+ filename)
 			imgfile = get_spectrogram(filename)
 			input_tensor = transform_image(imgfile)
-			prediction_idx = get_prediction(input_tensor)			  
+			prediction_idx, probability = get_prediction(input_tensor)			  
 			return jsonify({'class_id': prediction_idx, 'probability' : probability})
 		else:
 			abort(400)
