@@ -28,7 +28,7 @@ plt.figure(figsize=(10,10))
 
 @app.route('/')
 def hello():
-	return "Hello World!"
+	return "Hello World Frank!"
 
 
 def transform_image(infile):
